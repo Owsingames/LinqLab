@@ -109,8 +109,8 @@ namespace LinqLab
 
             //question 7: Find all students whose name starts with a vowel -- a,e,i,o,u
             List<Student> nameHasVowel = students.Where(x => x.Name.ToLower().StartsWith('a') || x.Name.ToLower().StartsWith('u')
-                || x.Name.StartsWith('o') || x.Name.StartsWith('e') || x.Name.StartsWith('i')).ToList();
-            Console.WriteLine("7) All names that contain a vowel: ");
+                || x.Name.ToLower().StartsWith('o') || x.Name.ToLower().StartsWith('e') || x.Name.ToLower().StartsWith('i')).ToList();
+            Console.WriteLine("7) All names that start a vowel: ");
             foreach (Student s in nameHasVowel)
             {
                 Console.WriteLine(s.Name);
