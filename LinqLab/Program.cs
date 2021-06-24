@@ -40,7 +40,7 @@ namespace LinqLab
             Console.WriteLine("3) Max value under 10k: " + numUnder10k);
 
             //question 4: Find all values between 10 and 100
-            List<int> between10an100 = nums.Where(x => x < 100).ToList();
+            List<int> between10an100 = nums.Where(x => x < 100 && x > 10).ToList();
             Console.WriteLine("4) All values between 10 and 100: ");
             foreach(int num in between10an100)
             {
@@ -64,6 +64,8 @@ namespace LinqLab
             {
                 Console.Write(num + ", ");
             }
+
+
             Console.WriteLine();
             Console.WriteLine();
             //---------------------- Students Collection ----------------------
@@ -106,8 +108,8 @@ namespace LinqLab
             }
 
             //question 7: Find all students whose name starts with a vowel -- a,e,i,o,u
-            List<Student> nameHasVowel = students.Where(x => x.Name.Contains('a') || x.Name.Contains('u')
-                || x.Name.Contains('o') || x.Name.Contains('e') || x.Name.Contains('i')).ToList();
+            List<Student> nameHasVowel = students.Where(x => x.Name.ToLower().StartsWith('a') || x.Name.ToLower().StartsWith('u')
+                || x.Name.StartsWith('o') || x.Name.StartsWith('e') || x.Name.StartsWith('i')).ToList();
             Console.WriteLine("7) All names that contain a vowel: ");
             foreach (Student s in nameHasVowel)
             {
